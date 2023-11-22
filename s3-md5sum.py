@@ -68,4 +68,6 @@ def execute_manifest_check(bucket_name, manifest_file):
 
  
 if __name__ == "__main__":
-    execute_manifest_check('gse190395','manifest.tsv')
+    bucket_name=''
+    manifest_file=''
+    execute_manifest_check( bucket_name, manifest_file)
