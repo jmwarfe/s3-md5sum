@@ -49,7 +49,7 @@ def check_file_hash(s3_uri, manifest_checksum):
 
 @flow(task_runner=ConcurrentTaskRunner, name="Check MD5 of S3 URI Against Manifest",log_prints=True )
 
-def execute_manifest_check(bucket_name, manifest_file):
+def runner(bucket_name, manifest_file):
     s3_client = boto3.client('s3')
     
     try:
@@ -70,4 +70,4 @@ def execute_manifest_check(bucket_name, manifest_file):
 if __name__ == "__main__":
     bucket_name=''
     manifest_file=''
-    execute_manifest_check( bucket_name, manifest_file)
+    runner( bucket_name, manifest_file)
